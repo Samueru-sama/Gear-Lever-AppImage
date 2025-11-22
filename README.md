@@ -4,4 +4,4 @@ WIP
 
 ## Known issue
 
-- `fuse2` AppImages cannot be integrated (tested Krita AppImage), `dwarfs` AppImages integrate fine
+- `squashfs` AppImages cannot be integrated (tested Krita AppImage), `dwarfs` AppImages integrate fine
