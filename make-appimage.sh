@@ -17,6 +17,7 @@ export GTK_DIR=gtk-4.0
 export PATH_MAPPING='
        /usr/share/gearlever:${SHARUN_DIR}/share/gearlever
        /usr/lib/gearlever:${SHARUN_DIR}/lib/gearlever
+       /usr/share/locale:${SHARUN_DIR}/share/locale
 '
 export EXEC_WRAPPER=1
 export DEPLOY_LOCALE=1
