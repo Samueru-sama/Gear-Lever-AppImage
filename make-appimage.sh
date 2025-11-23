@@ -15,9 +15,7 @@ export DEPLOY_OPENGL=1
 export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
 export PATH_MAPPING='
-       /usr/share/gearlever:${SHARUN_DIR}/share/gearlever
        /usr/lib/gearlever:${SHARUN_DIR}/lib/gearlever
-       /usr/share/locale:${SHARUN_DIR}/share/locale
 '
 export EXEC_WRAPPER=1
 export DEPLOY_LOCALE=1
@@ -36,6 +34,10 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
              /usr/bin/dwarfsck \
+
+# Patch Gear Lever to use AppImage's directory
+sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
+sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gearlever
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
